@@ -1,0 +1,4 @@
+(library
+ (name xterm)
+ (public_name xterm)
+ (libraries brr))

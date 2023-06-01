@@ -1,0 +1,11 @@
+(executable
+ (name index)
+ (modes js)
+ (libraries xterm))
+
+(rule
+ (alias default)
+ (deps index.bc.js)
+ (targets index.js)
+ (mode promote)
+ (action (copy %{deps} %{targets})))
