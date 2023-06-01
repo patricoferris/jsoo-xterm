@@ -47,7 +47,7 @@ let () =
   match Document.find_el_by_id G.document (Jstr.v "terminal") with
   | None -> failwith "No terminal element"
   | Some el ->
-    let opts = Terminal.opts () in
+    let opts = Terminal.opts ~cursor_blink:true () in
     let terminal = Xterm.Terminal.v ~opts () in
     Terminal.open_ terminal el;
     prompt terminal;
