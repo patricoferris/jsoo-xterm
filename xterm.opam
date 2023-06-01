@@ -1,0 +1,18 @@
+opam-version: "2.0"
+synopsis: "Brr bindings to Xterm"
+maintainer: "Patrick Ferris <patrick@sirref.org>"
+authors: "Patrick Ferris <patrick@sirref.org>"
+license: "MIT"
+homepage: "https://github.com/patricoferris/jsoo-xterm"
+bug-reports: "https://github.com/patricoferris/jsoo-xterm/issues"
+depends: [
+  "dune" {>= "3.5.0"}
+  "brr"  {>= "0.0.4"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/patricoferris/jsoo-xterm"
+description: "Brr bindings for the terminal emulation library Xterm"
